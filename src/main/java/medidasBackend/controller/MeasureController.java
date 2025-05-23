@@ -1,33 +1,42 @@
 package medidasBackend.controller;
 
+import lombok.RequiredArgsConstructor;
+import medidasBackend.dto.MeasureDTO;
 import medidasBackend.entity.Measure;
+import medidasBackend.mapper.MeasureMapper;
 import medidasBackend.service.MeasureService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/measure")
+@RequiredArgsConstructor
 public class MeasureController {
 
-    public final MeasureService measureService;
-    public MeasureController(MeasureService measureService) {
-        this.measureService = measureService;
-    }
+    private final MeasureService measureService;
+    private final MeasureMapper measureMapper;
+
 
     @GetMapping
-    public List<Measure> getAllMeasures() {
-        return measureService.getAllMeasures();
+    public List<MeasureDTO> getAllMeasures() {
+        List<Measure> measures = measureService.getAllMeasures();
+        return measures.stream()
+                .map(measureMapper::toDto)
+                .toList();
     }
 
     @PostMapping
-    public Measure registerMeasure(@RequestBody Measure measure) {
-        return measureService.registerMeasure(measure);
+    public ResponseEntity<MeasureDTO> registerMeasure(@RequestBody MeasureDTO dto) {
+        Measure created = measureService.registerMeasure(measureMapper.toEntity(dto));
+        return ResponseEntity.ok(measureMapper.toDto(created));
     }
 
     @DeleteMapping("/{id}")
-    public String deleteMeasure(@PathVariable Long id) {
-        return measureService.deleteMeasure(id);
+    public ResponseEntity<Void> deleteMeasure(@PathVariable Long id) {
+        measureService.deleteMeasure(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

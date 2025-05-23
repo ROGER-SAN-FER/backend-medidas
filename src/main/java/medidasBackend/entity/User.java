@@ -8,8 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.core.annotation.MergedAnnotationSelector;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -29,10 +27,10 @@ public class User {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name= "SEX")
+    @Column(name = "SEX")
     private String sex;
 
-    @Column(name= "BIRTHDAY")
+    @Column(name = "BIRTHDAY")
     private LocalDate birthday;
 
     @Column(name = "EMAIL")
