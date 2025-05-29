@@ -1,4 +1,4 @@
-package medidasBackend.constants;
+package mitensionbackend.constants;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;

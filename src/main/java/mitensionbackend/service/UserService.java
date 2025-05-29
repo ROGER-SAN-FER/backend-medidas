@@ -1,8 +1,8 @@
-package medidasBackend.service;
+package mitensionbackend.service;
 
-import medidasBackend.model.dto.UserDTO;
-import medidasBackend.model.entity.Measure;
-import medidasBackend.model.entity.User;
+import mitensionbackend.model.dto.UserDTO;
+import mitensionbackend.model.entity.Measure;
+import mitensionbackend.model.entity.User;
 
 import java.util.List;
 

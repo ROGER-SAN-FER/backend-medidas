@@ -1,4 +1,4 @@
-package medidasBackend.model.entity;
+package mitensionbackend.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

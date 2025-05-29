@@ -1,14 +1,14 @@
-package medidasBackend.service;
+package mitensionbackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import medidasBackend.model.dto.MeasureDTO;
-import medidasBackend.model.RequestFilters;
-import medidasBackend.model.entity.Measure;
-import medidasBackend.mapper.MeasureMapper;
-import medidasBackend.repository.MeasureRepository;
-import medidasBackend.repository.MeasureSpecification;
-import medidasBackend.repository.UserRepository;
+import mitensionbackend.model.dto.MeasureDTO;
+import mitensionbackend.model.RequestFilters;
+import mitensionbackend.model.entity.Measure;
+import mitensionbackend.mapper.MeasureMapper;
+import mitensionbackend.repository.MeasureRepository;
+import mitensionbackend.repository.MeasureSpecification;
+import mitensionbackend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

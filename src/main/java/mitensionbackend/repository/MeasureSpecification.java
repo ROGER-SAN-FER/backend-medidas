@@ -1,4 +1,4 @@
-package medidasBackend.repository;
+package mitensionbackend.repository;
 
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -7,8 +7,8 @@ import jakarta.persistence.criteria.Root;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import medidasBackend.model.RequestFilters;
-import medidasBackend.model.entity.Measure;
+import mitensionbackend.model.RequestFilters;
+import mitensionbackend.model.entity.Measure;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.time.LocalDate;

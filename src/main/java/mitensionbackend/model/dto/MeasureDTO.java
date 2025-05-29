@@ -1,4 +1,4 @@
-package medidasBackend.model.dto;
+package mitensionbackend.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,10 +1,10 @@
-package medidasBackend;
+package mitensionbackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MedidasBackendApplicationTests {
+class MiTensionBackendApplicationTests {
 
     @Test
     void contextLoads() {

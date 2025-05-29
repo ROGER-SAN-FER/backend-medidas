@@ -1,4 +1,4 @@
-package medidasBackend.model;
+package mitensionbackend.model;
 
 import lombok.Getter;
 import lombok.Setter;

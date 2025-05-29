@@ -1,7 +1,7 @@
-package medidasBackend.mapper;
+package mitensionbackend.mapper;
 
-import medidasBackend.model.dto.MeasureDTO;
-import medidasBackend.model.entity.Measure;
+import mitensionbackend.model.dto.MeasureDTO;
+import mitensionbackend.model.entity.Measure;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

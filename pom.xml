@@ -8,11 +8,11 @@
         <version>3.4.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>medidasBackend</groupId>
-    <artifactId>medidasBackend</artifactId>
+    <groupId>MiTensionBackend</groupId>
+    <artifactId>MiTensionBackend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>medidasBackend</name>
-    <description>medidasBackend</description>
+    <name>mitensionbackend</name>
+    <description>mitensionbackend</description>
     <url/>
     <licenses>
         <license/>

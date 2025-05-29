@@ -1,11 +1,11 @@
-package medidasBackend.controller;
+package mitensionbackend.controller;
 
 import lombok.RequiredArgsConstructor;
-import medidasBackend.model.dto.MeasureDTO;
-import medidasBackend.model.RequestFilters;
-import medidasBackend.model.entity.Measure;
-import medidasBackend.mapper.MeasureMapper;
-import medidasBackend.service.MeasureService;
+import mitensionbackend.model.dto.MeasureDTO;
+import mitensionbackend.model.RequestFilters;
+import mitensionbackend.model.entity.Measure;
+import mitensionbackend.mapper.MeasureMapper;
+import mitensionbackend.service.MeasureService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

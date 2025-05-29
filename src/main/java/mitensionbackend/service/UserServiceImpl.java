@@ -1,12 +1,12 @@
-package medidasBackend.service;
+package mitensionbackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import medidasBackend.model.dto.UserDTO;
-import medidasBackend.model.entity.Measure;
-import medidasBackend.model.entity.User;
-import medidasBackend.mapper.UserMapper;
-import medidasBackend.repository.UserRepository;
+import mitensionbackend.model.dto.UserDTO;
+import mitensionbackend.model.entity.Measure;
+import mitensionbackend.model.entity.User;
+import mitensionbackend.mapper.UserMapper;
+import mitensionbackend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
