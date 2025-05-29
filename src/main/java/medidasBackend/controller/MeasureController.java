@@ -1,8 +1,9 @@
 package medidasBackend.controller;
 
 import lombok.RequiredArgsConstructor;
-import medidasBackend.dto.MeasureDTO;
-import medidasBackend.entity.Measure;
+import medidasBackend.model.dto.MeasureDTO;
+import medidasBackend.model.RequestFilters;
+import medidasBackend.model.entity.Measure;
 import medidasBackend.mapper.MeasureMapper;
 import medidasBackend.service.MeasureService;
 import org.springframework.http.ResponseEntity;
@@ -20,11 +21,8 @@ public class MeasureController {
 
 
     @GetMapping
-    public List<MeasureDTO> getAllMeasures() {
-        List<Measure> measures = measureService.getAllMeasures();
-        return measures.stream()
-                .map(measureMapper::toDto)
-                .toList();
+    public List<MeasureDTO> getMeasures(@RequestBody RequestFilters filters) {
+        return measureService.getMeasures(filters);
     }
 
     @PostMapping

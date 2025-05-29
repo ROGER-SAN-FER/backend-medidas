@@ -1,10 +1,11 @@
 package medidasBackend.mapper;
 
-import medidasBackend.dto.MeasureDTO;
-import medidasBackend.entity.Measure;
+import medidasBackend.model.dto.MeasureDTO;
+import medidasBackend.model.entity.Measure;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface MeasureMapper {
@@ -16,4 +17,7 @@ public interface MeasureMapper {
     /** DTO → Entity */
     @Mapping(source = "userId", target = "user.id")
     Measure toEntity(MeasureDTO dto);
+
+    List<MeasureDTO> toDtos(List<Measure> entities);
+
 }

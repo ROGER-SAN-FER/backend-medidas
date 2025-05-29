@@ -1,12 +1,13 @@
 package medidasBackend.service;
 
-import medidasBackend.entity.Measure;
-import org.springframework.data.jpa.repository.JpaRepository;
+import medidasBackend.model.dto.MeasureDTO;
+import medidasBackend.model.RequestFilters;
+import medidasBackend.model.entity.Measure;
 
 import java.util.List;
 
 public interface MeasureService {
-    public List<Measure> getAllMeasures();
+    public List<MeasureDTO> getMeasures(RequestFilters filters);
     public Measure registerMeasure(Measure measure);
-    public String deleteMeasure(Long id);
+    public void deleteMeasure(Long id);
 }

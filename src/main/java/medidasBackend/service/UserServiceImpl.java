@@ -2,10 +2,11 @@ package medidasBackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import medidasBackend.entity.Measure;
-import medidasBackend.entity.User;
+import medidasBackend.model.dto.UserDTO;
+import medidasBackend.model.entity.Measure;
+import medidasBackend.model.entity.User;
+import medidasBackend.mapper.UserMapper;
 import medidasBackend.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,14 +16,17 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userMapper = userMapper;
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserDTO> getAllUsers() {
+        List<User> userList =  userRepository.findAll();
+        return userMapper.toDtoList(userList);
     }
 
     @Override

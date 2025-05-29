@@ -1,4 +1,4 @@
-package medidasBackend.dto;
+package medidasBackend.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

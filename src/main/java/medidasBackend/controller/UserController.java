@@ -1,10 +1,10 @@
 package medidasBackend.controller;
 
 import lombok.RequiredArgsConstructor;
-import medidasBackend.dto.MeasureDTO;
-import medidasBackend.dto.UserDTO;
-import medidasBackend.entity.Measure;
-import medidasBackend.entity.User;
+import medidasBackend.model.dto.MeasureDTO;
+import medidasBackend.model.dto.UserDTO;
+import medidasBackend.model.entity.Measure;
+import medidasBackend.model.entity.User;
 import medidasBackend.mapper.MeasureMapper;
 import medidasBackend.mapper.UserMapper;
 import medidasBackend.service.UserService;
@@ -24,8 +24,9 @@ public class UserController {
 
     @GetMapping
     public List<UserDTO> getAllUsers() {
-        List<User> users = userService.getAllUsers();
-        return userMapper.toDtoList(users);
+//        List<User> users = userService.getAllUsers();
+//        return userMapper.toDtoList(users);
+        return userService.getAllUsers();
     }
 
     @PostMapping

@@ -2,8 +2,12 @@ package medidasBackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import medidasBackend.entity.Measure;
+import medidasBackend.model.dto.MeasureDTO;
+import medidasBackend.model.RequestFilters;
+import medidasBackend.model.entity.Measure;
+import medidasBackend.mapper.MeasureMapper;
 import medidasBackend.repository.MeasureRepository;
+import medidasBackend.repository.MeasureSpecification;
 import medidasBackend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,14 +19,19 @@ public class MeasureServiceImpl implements MeasureService {
 
     private final MeasureRepository measureRepository;
     private final UserRepository userRepository;
-    public MeasureServiceImpl(MeasureRepository measureRepository, UserRepository userRepository) {
+    private final MeasureMapper measureMapper;
+
+    public MeasureServiceImpl(MeasureRepository measureRepository, UserRepository userRepository, MeasureMapper measureMapper) {
         this.measureRepository = measureRepository;
         this.userRepository = userRepository;
+        this.measureMapper = measureMapper;
     }
 
     @Override
-    public List<Measure> getAllMeasures(){
-        return measureRepository.findAll();
+    public List<MeasureDTO> getMeasures(RequestFilters filters){
+        List<Measure> measureList = measureRepository.findAll(new MeasureSpecification(filters));
+
+        return measureMapper.toDtos(measureList);
     }
 
     @Override
@@ -37,13 +46,11 @@ public class MeasureServiceImpl implements MeasureService {
     }
 
     @Override
-    public String deleteMeasure(Long id){
+    public void deleteMeasure(Long id){
         Measure existente = measureRepository.findById(id).orElse(null);
         if(existente != null){
             measureRepository.deleteById(id);
-            return "Measure con id: " + id + " eliminado.";
         } else {
-            return "No existe el measure con id: " + id;
         }
     }
 }

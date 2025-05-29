@@ -1,11 +1,10 @@
 package medidasBackend.mapper;
 
-import medidasBackend.dto.UserDTO;
-import medidasBackend.dto.MeasureDTO;
-import medidasBackend.entity.User;
+import medidasBackend.model.dto.UserDTO;
+import medidasBackend.model.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
+
 import java.util.List;
 
 @Mapper(
