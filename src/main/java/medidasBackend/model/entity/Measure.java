@@ -34,7 +34,7 @@ public class Measure {
     private LocalDateTime measureDate;
 
     @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "id_user", nullable = false)
+    @JoinColumn(name = "USER_ID", nullable = false)
     @JsonBackReference
     private User user;
 }
